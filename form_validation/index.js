@@ -11,38 +11,63 @@ let formvalid = () => {
     let Errpass = document.querySelector("#errpass");
     let Errcpass = document.querySelector("#errcpass");
 
-    // Clear previous errors
-    Errname.innerHTML = "";
-    Errnum.innerHTML = "";
-    Erremail.innerHTML = "";
-    Errpass.innerHTML = "";
-    Errcpass.innerHTML = "";
-
-    let valid = true;
+    
 
     if (Name === "") {
         Errname.innerHTML = "Please enter Name";
-        valid = false;
-    }
-    if (Num === "") {
-        Errnum.innerHTML = "Please enter Number";
-        valid = false;
-    }
-    if (Email === "") {
-        Erremail.innerHTML = "Please enter Email";
-        valid = false;
-    }
-    if (Pass === "") {
-        Errpass.innerHTML = "Please enter Password";
-        valid = false;
-    }
-    if (Cpass === "") {
-        Errcpass.innerHTML = "Please confirm Password";
-        valid = false;
-    } else if (Cpass !== Pass) {
-        Errcpass.innerHTML = "Passwords do not match";
-        valid = false;
+        return false;
     }
 
-    return valid; // prevents form submission if false
-};
+
+
+    if (Num === "") {
+        Errnum.innerHTML = "Please enter Number";
+        return false;
+    }
+
+    if (isNaN(Num)) {
+        Errnum.innerHTML = "Enter only numbers";
+        return false;
+    }
+
+    if (Num.length != 10) {
+        Errnum.innerHTML = "Enter valid 10-digit number";
+        return false;
+    }
+
+    
+
+    if (Email === "") {
+        Erremail.innerHTML = "Please enter Email";
+        return false;
+    }
+    if(!(Email.includes('@') && Email.includes('.com'))){
+        Erremail.innerHTML = "Please enter valid Email";
+        return false;
+     
+    }
+
+
+    
+        
+    if (Pass === "") {
+        Errpass.innerHTML = "Please enter Password";
+        return false;
+    }
+
+    if (Cpass === "") {
+        Errcpass.innerHTML = "Please confirm Password";
+        return false;
+    }
+
+    if (Cpass !== Pass) {
+        Errcpass.innerHTML = "Passwords do not match";
+        return false;
+    }
+    if (!(Pass.match(/[@$#]/) && Pass.match(/[123456789]/) && Pass.match(/[A-Z]/)  && Pass.match(/[a-b]/)) ){
+        Errpass.innerHTML = "Please enter strong Password";
+        return false;
+    }
+
+    return true;
+}
