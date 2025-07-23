@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Calculator</title>
+<style>
+  table { margin: 20px auto; }
+  td { width: 40px; height: 40px; text-align: center; border: 1px solid #000; cursor: pointer; }
+  #screen { height: 40px; font-size: 20px; border: 1px solid #000; }
+</style>
+</head>
+<body>
+  <table>
+    <tr><td id="screen" colspan="4"></td></tr>
+    <tr>
+      <td onclick="cay('1')">1</td>
+      <td onclick="cay('2')">2</td>
+      <td onclick="cay('3')">3</td>
+      <td onclick="cay('4')">4</td>
+    </tr>
+    <tr>
+      <td onclick="cay('5')">5</td>
+      <td onclick="cay('6')">6</td>
+      <td onclick="cay('7')">7</td>
+      <td onclick="cay('8')">8</td>
+    </tr>
+    <tr>
+      <td onclick="cay('9')">9</td>
+      <td onclick="cay('0')">0</td>
+      <td onclick="cay('+')">+</td>
+      <td onclick="cay('-')">-</td>
+    </tr>
+    <tr>
+      <td onclick="cay('*')">*</td>
+      <td onclick="cay('/')">/</td>
+      <td onclick="cay('%')">%</td>
+      <td onclick="equa()">=</td>
+    </tr>
+    <tr>
+      <td onclick="clearScreen()" colspan="4" style="text-align:center; cursor:pointer;">Clear</td>
+    </tr>
+  </table>
+
+<script src="index.js">
+ 
+</script>
+</body>
+</html>

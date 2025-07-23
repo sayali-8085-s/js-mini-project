@@ -4,6 +4,7 @@ let formvalid = () => {
     let Email = document.querySelector("#email").value.trim();
     let Pass = document.querySelector("#pass").value.trim();
     let Cpass = document.querySelector("#cpass").value.trim();
+    
 
     let Errname = document.querySelector("#errname");
     let Errnum = document.querySelector("#errnum");
@@ -15,6 +16,7 @@ let formvalid = () => {
 
     if (Name === "") {
         Errname.innerHTML = "Please enter Name";
+        document.querySelector("#name").style.border="1px solid red";
         return false;
     }
 
@@ -22,6 +24,7 @@ let formvalid = () => {
 
     if (Num === "") {
         Errnum.innerHTML = "Please enter Number";
+        document.querySelector("#Num").PlaceHolder='enter aa number';
         return false;
     }
 
@@ -62,6 +65,9 @@ let formvalid = () => {
 
     if (Cpass !== Pass) {
         Errcpass.innerHTML = "Passwords do not match";
+        document.querySelector("#cpass").value ="";
+        document.querySelector("#cpass").focus();
+
         return false;
     }
     if (!(Pass.match(/[@$#]/) && Pass.match(/[123456789]/) && Pass.match(/[A-Z]/)  && Pass.match(/[a-b]/)) ){
