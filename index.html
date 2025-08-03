@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fully Transparent Sign-In</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: url("ahri-.jpg") no-repeat center center/cover;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: white;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 400px;
+      margin-left: 150px;
+      padding: 40px;
+      background-color: transparent; /* Fully transparent */
+      backdrop-filter: none;
+    }
+
+    .form-container h1 {
+      font-size: 36px;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7); /* Helps text pop */
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      outline: none;
+      backdrop-filter: blur(1px); /* subtle blur inside input */
+    }
+
+    .form-group input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .error {
+      font-size: 13px;
+      color: #ffbbbb;
+      margin-top: 5px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: rgba(0, 191, 255, 0.7);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: rgba(0, 160, 220, 0.85);
+    }
+
+    @media (max-width: 768px) {
+      .form-container {
+        margin: 30px auto;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Sign In</h1>
+    <form>
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Full Name" />
+        <p id="errname" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="num" placeholder="Phone Number" />
+        <p id="errnum" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="email" placeholder="Email" />
+        <p id="erremail" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="pass" placeholder="Password" />
+        <p id="errpass" class="error"></p>
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="cpass" placeholder="Confirm Password" />
+        <p id="errcpass" class="error"></p>
+      </div>
+
+      <input type="submit" value="Sign Up" onclick="return formvalid()" />
+    </form>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
