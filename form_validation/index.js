@@ -24,7 +24,7 @@ let formvalid = () => {
 
     if (Num === "") {
         Errnum.innerHTML = "Please enter Number";
-        document.querySelector("#Num").PlaceHolder='enter aa number';
+        document.querySelector("#num").PlaceHolder='enter aa number';
         return false;
     }
 
